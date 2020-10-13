@@ -349,8 +349,12 @@ def input_processing():
                 namespace.write.write(hex(ans))
             namespace.write.close()
         else:
-            print("\nResult is:")
-            print(hex(ans))
+            if mode:
+                print("\nResult is:")
+                print(ans)
+            else:
+                print("\nResult is:")
+                print(hex(ans))
 
 if __name__ == "__main__":
     random.seed()
