@@ -347,6 +347,7 @@ def input_processing():
                 namespace.write.write(ans)
             else:
                 namespace.write.write(hex(ans))
+            print("File is ready")
             namespace.write.close()
         else:
             if mode:
