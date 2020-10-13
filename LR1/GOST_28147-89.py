@@ -288,9 +288,9 @@ def input_processing():
         if namespace.chk != None:
             print("Mode = ECB")
             print("Plain data is:", bytes.fromhex(hex(text)[2:]).decode())
-            ans = gost.ECB(text, mode=0)
+            ans, _ = gost.ECB(text, mode=0)
             print("Crypt text is:", hex(ans))
-            ans = gost.ECB(ans, mode=1)
+            ans, _ = gost.ECB(ans, mode=1)
             print("Decoded text is:", bytes.fromhex(hex(ans)[2:]).decode())
         else:
             ans, key = gost.ECB(text, mode)
