@@ -8,6 +8,7 @@
  
 # Использование
 GOST_28147-89.py [-h] [--chk] [-m MODE] --algo {ECB,CNT,CFB} [--MAC] -r  FILE [-w FILE] [--key] [--syn] 
+
 GOST_28147-89.exe [-h] [--chk] [-m MODE] --algo {ECB,CNT,CFB} [--MAC] -r  FILE [-w FILE] [--key] [--syn] 
 
 Описание аргументов:
