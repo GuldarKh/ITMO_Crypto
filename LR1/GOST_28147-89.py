@@ -132,7 +132,7 @@ class GOST_28147():
         tmp_data = str(bin(tmp_data))[3:]
         # Checking file size divisibility by 64
         if len(tmp_data) % 64 != 0:
-            print(len(tmp_data))
+            print("Length of data is:", len(tmp_data))
             print("Error!!! Not divisible by 64!")
             raise ZeroDivisionError
         plain_text = self.make_block(data)
@@ -349,6 +349,7 @@ def input_processing():
                 namespace.write.write(hex(ans))
             namespace.write.close()
         else:
+            print("\nResult is:")
             print(hex(ans))
 
 if __name__ == "__main__":
