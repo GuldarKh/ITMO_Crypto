@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Confirmation</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/confirm">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="tmp_pwd" placeholder="Temper Password" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Confirm</button>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="hidden" name="id" value={{key}}>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
