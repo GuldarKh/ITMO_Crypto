@@ -26,12 +26,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
 
-class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True) 
-    login = db.Column(db.String(1000))
-    email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String(100))
-    tmp_pwd = db.Column(db.String(100))
+from .models import User
 
 @login_manager.user_loader
 def load_user(user_id):
