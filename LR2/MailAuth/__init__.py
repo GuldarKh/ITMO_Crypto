@@ -22,6 +22,8 @@ app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', 'password')
 db.init_app(app)
 mail = Mail(app)
 
+db.create_all(app=app)
+
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
